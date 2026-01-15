@@ -115,9 +115,9 @@ async function getGraphAccessToken(): Promise<string> {
     return tokenCache.token;
   }
 
-  const tenantId = requiredEnv("2907b69a-38da-4937-87bc-cd20b83c4539");
-  const clientId = requiredEnv("c16f5815-e2bd-457c-b464-b060ec7fe531");
-  const clientSecret = process.env.MS_CLIENT_SECRET;
+  const tenantId = requiredEnv("MS_TENANT_ID");
+  const clientId = requiredEnv("MS_CLIENT_ID");
+  const clientSecret = requiredEnv("MS_CLIENT_SECRET");
 
   const tokenUrl = `https://login.microsoftonline.com/${encodeURIComponent(
     tenantId
